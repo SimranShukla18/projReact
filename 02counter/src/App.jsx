@@ -4,11 +4,20 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-    let counter = 15
+
+  let [counter, setCounter] = useState(15)
+    //let counter = 15
 
   const addValue = () => {
-    console.log("clicked", counter);
+    //console.log("clicked", counter+1);
     counter = counter + 1
+    setCounter(counter)
+  }
+
+  const removeValue = () => {
+    //console.log("clicked", counter-1);
+    //counter = counter - 1
+    setCounter(counter -1)
   }
   return (
     <>
@@ -16,10 +25,9 @@ function App() {
       <h1> Aur kya haal chal?</h1>
       <h2>Counter value: {counter}</h2>
 
-      <button
-      onClick={addValue}>Add value</button>
+      <button onClick={addValue}>Add value</button>
       <br />
-      <button>remove value</button>
+      <button onClick={removeValue}>remove value</button>
     </>
   )
 }
